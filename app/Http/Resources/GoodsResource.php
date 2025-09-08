@@ -12,9 +12,7 @@ class GoodsResource extends JsonResource
             'name' => $this->name,
             'price' => $this->name,
             'qty' => $this->remains()->sum('qty'),
-            'category' => $this->properties()->whereHas('property', function ($query) {
-                $query->where('name', 'Категория');
-            })->first()->value,
+            'category' => $this->category()->first()->value,
             'brand' => $this->brand()->first()->value,
             'status' => $this->status
         ];

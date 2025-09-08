@@ -30,4 +30,11 @@ class Good extends Model
             ->whereHas('property', fn ($query)  => $query->where('name', 'Бренд'))
             ->limit(1);
     }
+
+    public function category(): BelongsToMany
+    {
+        return $this->belongsToMany(GoodPropertyValue::class)
+            ->whereHas('property', fn ($query)  => $query->where('name', 'Категория'))
+            ->limit(1);
+    }
 }

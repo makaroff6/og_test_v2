@@ -12,6 +12,8 @@ class GoodStoreRequest extends FormRequest
             'name' => 'nullable|string',
             'price' => 'nullable|numeric',
             'description' => 'nullable|string',
+            'properties' => 'nullable|array',
+            'remains' => 'nullable|array'
         ];
     }
 }
